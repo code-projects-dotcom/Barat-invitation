@@ -1,0 +1,1225 @@
+<!DOCTYPE html>
+<!--
+  ╔══════════════════════════════════════════════════════════════════╗
+  ║  BARAT-ONLY INVITATION VERSION                                   ║
+  ║  Flow: Opening → Couple Introduction → Baraat → Thank You        ║
+  ║  (The Mehndi and Walima pages are skipped.)                      ║
+  ║  The full wedding invitation is a separate project folder.       ║
+  ╚══════════════════════════════════════════════════════════════════╝
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hira &amp; Hamza · Baraat Invitation</title>
+<meta name="description" content="With joy in our hearts, we invite you to celebrate the wedding of Hira Rasul &amp; Hamza Azhar.">
+<meta name="theme-color" content="#5e2c2e">
+<meta name="color-scheme" content="light">
+<meta name="format-detection" content="telephone=no">
+
+<!-- Link preview (WhatsApp / social). After hosting, replace YOUR-DOMAIN.com with your real address. -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hira &amp; Hamza · Baraat Invitation">
+<meta property="og:description" content="With joy in our hearts, we invite you to celebrate our wedding. Tap to open your invitation.">
+<meta property="og:image" content="https://YOUR-DOMAIN.com/assets/images/share.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preload" as="image" href="assets/images/scene-0-opening.webp?v=4" type="image/webp">
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/great-vibes-latin-400-normal.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/cormorant-garamond-latin-600-normal.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/jost-latin-400-normal.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/amiri-quran-arabic-400-normal.woff2" crossorigin>
+
+<style>
+/* ==========================================================================
+   ★★★  CUSTOMIZATION SETTINGS  ★★★
+   --------------------------------------------------------------------------
+   This is the ONLY place you need to edit to change speeds and darkness.
+   Change a number, save the file, refresh the page. Nothing else to touch.
+
+   Time values: 1000ms = 1 second.  BIGGER number = SLOWER.  SMALLER = FASTER.
+   ========================================================================== */
+:root{
+
+  /* ── 1. EVENT IMAGE DARKNESS (Mehndi, Baraat, Walima only) ───────────────
+     0 = no darkening · 0.6 = current · 0.7 = darker · 0.5 = lighter · 1 = black */
+  --event-overlay-opacity: 0.6;
+
+  /* Extra soft shade behind the top heading of event pages (0 = off, 0.5 = strong) */
+  --event-scrim-opacity: 0.26;
+
+  /* ── 2. TEXT ENTRANCE ANIMATION (names, dates, venues, messages, thank-you…) ──
+     How long each line takes to fade in:                                    */
+  --text-duration: 1600ms;
+
+  /* Wait after a page appears before the FIRST line starts:                 */
+  --text-start-delay: 400ms;
+
+  /* Gap between one line and the next (the staggered effect):               */
+  --text-stagger: 250ms;
+
+  /* How far text floats up while fading in (0 = just fade, 6 = current, 10 = more): */
+  --text-rise: 6;
+
+  /* ── 3. TRANSITION BETWEEN PAGES (white fog) ─────────────────────────────
+     Total time the white mist takes to roll in and clear:                   */
+  --fog-duration: 500ms;
+
+  /* How long the new image takes to fade in:                                */
+  --scene-fade-duration: 400ms;
+
+  /* ── 4. OTHER MOTION ─────────────────────────────────────────────────────
+     Open Invitation button pulse/glow — one full cycle:                     */
+  --button-pulse-duration: 2200ms;
+
+  /* Very slow zoom on background pictures:                                  */
+  --image-drift-duration: 18s;
+}
+/* ★★★  END OF CUSTOMIZATION SETTINGS  ★★★ */
+
+/* ==========================================================================
+   FONTS (self-hosted, latin subset)
+   ========================================================================== */
+@font-face{font-family:"Great Vibes";font-style:normal;font-weight:400;font-display:swap;src:url("assets/fonts/great-vibes-latin-400-normal.woff2") format("woff2")}
+@font-face{font-family:"Cormorant Garamond";font-style:normal;font-weight:500;font-display:swap;src:url("assets/fonts/cormorant-garamond-latin-500-normal.woff2") format("woff2")}
+@font-face{font-family:"Cormorant Garamond";font-style:normal;font-weight:600;font-display:swap;src:url("assets/fonts/cormorant-garamond-latin-600-normal.woff2") format("woff2")}
+@font-face{font-family:"Cormorant Garamond";font-style:italic;font-weight:500;font-display:swap;src:url("assets/fonts/cormorant-garamond-latin-500-italic.woff2") format("woff2")}
+@font-face{font-family:"Cormorant Garamond";font-style:italic;font-weight:600;font-display:swap;src:url("assets/fonts/cormorant-garamond-latin-600-italic.woff2") format("woff2")}
+@font-face{font-family:"Amiri Quran";font-style:normal;font-weight:400;font-display:swap;src:url("assets/fonts/amiri-quran-arabic-400-normal.woff2") format("woff2")}
+@font-face{font-family:"Jost";font-style:normal;font-weight:300;font-display:swap;src:url("assets/fonts/jost-latin-300-normal.woff2") format("woff2")}
+@font-face{font-family:"Jost";font-style:normal;font-weight:400;font-display:swap;src:url("assets/fonts/jost-latin-400-normal.woff2") format("woff2")}
+@font-face{font-family:"Jost";font-style:normal;font-weight:500;font-display:swap;src:url("assets/fonts/jost-latin-500-normal.woff2") format("woff2")}
+
+/* ==========================================================================
+   DESIGN TOKENS
+   ========================================================================== */
+:root{
+  --ivory:#fbf7ee;
+  --pearl:#fffdf8;
+  --champagne:#ead9b0;
+  --gold:#b8975a;
+  --gold-deep:#86642f;
+  --beige:#efe4d0;
+  --wine:#5e2c2e;
+  --ink:#4a3a2a;
+
+
+  --serif:"Cormorant Garamond","Cormorant",Georgia,"Times New Roman",serif;
+  --script:"Great Vibes","Snell Roundhand","Apple Chancery",cursive;
+  --sans:"Jost","Avenir Next","Segoe UI",system-ui,-apple-system,Roboto,sans-serif;
+
+  --ease:cubic-bezier(.22,.7,.2,1);
+  --app-h:100vh;               /* overwritten with the real viewport height by JS */
+}
+@supports (height:100dvh){:root{--app-h:100dvh}}
+
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;height:100%;overflow:hidden;overscroll-behavior:none;background:var(--wine)}
+body{
+  font-family:var(--sans);color:var(--ink);
+  -webkit-text-size-adjust:100%;text-size-adjust:100%;
+  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
+  -webkit-tap-highlight-color:transparent;
+  font-synthesis:none;
+}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;margin:0;cursor:pointer}
+a{color:inherit}
+address{font-style:normal}
+p,h1,h2{margin:0}
+.sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+
+/* ==========================================================================
+   APP + SCENES
+   ========================================================================== */
+.app{position:fixed;top:0;left:0;width:100%;height:var(--app-h);overflow:hidden;touch-action:pan-y;background:var(--wine)}
+.scene:not(.scene--event){touch-action:none}   /* only event pages scroll their own content */
+
+.scene{
+  /* Each scene knows its image ratio; --u is "1% of the invitation width"
+     (never wider than the screen), so type scales with the artwork. */
+  --ar:.8;
+  --sw:calc(var(--app-h) * var(--ar));
+  --u:min(1vw, calc(var(--sw) / 100));
+  --h:calc(var(--app-h) / 100);
+  --safe-t:env(safe-area-inset-top,0px);
+  --safe-b:env(safe-area-inset-bottom,0px);
+
+  position:absolute;inset:0;overflow:hidden;
+  opacity:0;visibility:hidden;z-index:0;
+  background:var(--scene-bg,var(--wine));
+  outline:none;
+}
+.scene.active{opacity:1;visibility:visible;z-index:2;transition:opacity var(--scene-fade-duration) ease}
+.scene.leaving{opacity:1;visibility:visible;z-index:1}
+
+.scene--cover{--scene-bg:#dac5bc;--S:min(136vw,calc(var(--app-h) * .58),780px)}   /* card size; background = image background colour */
+.scene--cream{--scene-bg:#fbf6e8}
+.scene--event{--ar:.5581;--scene-bg:#1b1410}
+.scene--tall{--ar:.6667}   /* Mehndi & Baraat artwork (1024×1536) */
+.scene--thanks{--scene-bg:#f4f2ef}
+
+/* Blurred ambient fill — only rendered when the screen is wider than the artwork */
+.bg-fill{
+  position:absolute;inset:-8%;display:none;
+  background:var(--img,none) center/cover no-repeat;
+  filter:blur(26px) saturate(1.05);
+  transform:translateZ(0);
+}
+@media (min-aspect-ratio:4/5){
+  .scene--cream .bg-fill{display:block}
+  /* white artwork: feather the edges into the flat background instead of blurring */
+  .scene--thanks .stage{
+    -webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);
+    mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);
+  }
+}
+@media (min-aspect-ratio:56/100){.scene--event .bg-fill{display:block}}
+
+.stage{
+  position:absolute;top:0;left:50%;height:100%;
+  width:calc(var(--app-h) * var(--ar));
+  transform:translateX(-50%);
+  overflow:hidden;
+}
+.stage img{width:100%;height:100%;object-fit:cover;display:block;transform-origin:50% 55%;user-select:none;-webkit-user-drag:none}
+
+/* Very slow, subtle drift on the artwork (disabled for reduced motion) */
+@keyframes drift{from{transform:scale(1)}to{transform:scale(1.055)}}
+.scene--event.active .stage img{animation:drift var(--image-drift-duration) ease-out forwards}
+.scene--cream.active .stage img,.scene--thanks.active .stage img{animation:drift var(--image-drift-duration) ease-out forwards}
+
+/* Event-only dark overlay: covers the whole scene, sits under all text */
+.overlay{
+  position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:rgba(0,0,0,var(--event-overlay-opacity));
+}
+.scrim-top{
+  position:absolute;left:0;right:0;top:0;height:52%;z-index:2;pointer-events:none;
+  background:linear-gradient(180deg,rgba(12,7,4,var(--event-scrim-opacity)),rgba(12,7,4,0));
+}
+/* Soft white mist hugging the top and bottom edges of event scenes */
+.mist{position:absolute;left:0;right:0;height:17%;z-index:2;pointer-events:none;animation:breathe 9s ease-in-out infinite alternate}
+.mist--top{top:0;background:linear-gradient(180deg,rgba(255,255,255,.26),rgba(255,255,255,0))}
+.mist--bottom{bottom:0;background:linear-gradient(0deg,rgba(255,255,255,.3),rgba(255,255,255,0))}
+@keyframes breathe{from{opacity:.55}to{opacity:1}}
+
+.content{position:absolute;inset:0;z-index:3;display:flex;justify-content:center;pointer-events:none}
+.frame{position:relative;height:100%;width:calc(var(--u) * 100)}
+.content a,.content button{pointer-events:auto}
+
+/* ==========================================================================
+   REVEAL ANIMATIONS
+   ========================================================================== */
+.rv{
+  opacity:0;
+  transform:translate3d(0,calc(var(--u) * var(--text-rise)),0);
+  transition:opacity .6s ease,transform .6s ease;
+}
+.rv--fade{transform:none}
+.rv--zoom{transform:scale(.94)}
+.scene.active .rv{
+  opacity:1;transform:none;
+  transition:
+    opacity var(--text-duration) var(--ease) calc(var(--text-start-delay) + var(--i,0) * var(--text-stagger)),
+    transform var(--text-duration) var(--ease) calc(var(--text-start-delay) + var(--i,0) * var(--text-stagger));
+}
+.rule{display:block;transform:scaleX(0);transition:transform .5s ease,opacity .5s ease;opacity:0}
+.scene.active .rule{
+  transform:scaleX(1);opacity:1;
+  transition:
+    transform var(--text-duration) var(--ease) calc(var(--text-start-delay) + var(--i,0) * var(--text-stagger)),
+    opacity var(--text-duration) ease calc(var(--text-start-delay) + var(--i,0) * var(--text-stagger));
+}
+
+/* ==========================================================================
+   SCENE 0 — OPENING
+   ========================================================================== */
+.invite0{
+  position:absolute;inset:0;z-index:3;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:var(--safe-t) 0 var(--safe-b);
+  transition:transform var(--fog-duration) cubic-bezier(.5,0,.2,1),opacity calc(var(--fog-duration) * .7) ease .3s;
+}
+body.is-opening .invite0{transform:scale(1.12);opacity:0}
+
+/* gentle entrance for Page 0 (uses the same CUSTOMIZATION SETTINGS as every other page) */
+.fx{animation:fxUp var(--text-duration) var(--ease) both;animation-delay:calc(var(--text-start-delay) + var(--i,0) * var(--text-stagger))}
+.fx--fade{animation-name:fxFade}
+@keyframes fxUp{from{opacity:0;transform:translate3d(0,calc(var(--u) * var(--text-rise)),0)}to{opacity:1;transform:none}}
+@keyframes fxFade{from{opacity:0}to{opacity:1}}
+
+.card0{position:relative;flex:none;width:var(--S);height:var(--S)}
+.card0 img{display:block;width:100%;height:100%;user-select:none;-webkit-user-drag:none}
+.card0-text{ /* sits on the blank paper of the envelope card */
+  position:absolute;left:23.5%;width:55%;top:28.9%;
+  display:flex;flex-direction:column;align-items:center;text-align:center;
+}
+.c0-small{
+  font:400 max(10px,calc(var(--S) * .0235))/1.2 var(--sans);
+  letter-spacing:.3em;margin-right:-.3em;text-transform:uppercase;color:#9a8368;
+}
+.c0-names{margin-top:calc(var(--S) * .014);display:flex;flex-direction:column;align-items:center}
+.c0-names .n{
+  font:400 calc(var(--S) * .088)/1 var(--script);
+  color:#85673a;padding:.04em .12em .08em;white-space:nowrap;
+  text-shadow:0 1px 0 rgba(255,255,255,.65);
+}
+.c0-names .w{
+  font:italic 500 max(13px,calc(var(--S) * .034))/1 var(--serif);
+  color:#a88a5a;letter-spacing:.1em;margin:calc(var(--S) * .002) 0 calc(var(--S) * .002);
+}
+
+.ayat{margin-top:calc(var(--S) * -.075);width:min(92vw,calc(var(--S) * .94));text-align:center}
+.ayat-text{
+  margin:0;direction:rtl;
+  font:400 max(18px,min(calc(var(--u) * 5.2),calc(var(--h) * 2.6)))/2 "Amiri Quran","Noto Naskh Arabic","Scheherazade New",serif;
+  color:#5f4a36;
+}
+.ayat-ref{
+  margin-top:calc(var(--h) * 1.1);
+  font:400 max(10px,min(calc(var(--u) * 2.6),calc(var(--h) * 1.35)))/1.3 var(--sans);
+  letter-spacing:.26em;margin-right:-.26em;text-transform:uppercase;color:#8d7658;
+}
+.btnwrap{margin-top:calc(var(--h) * 2.4)}
+
+.open-btn{
+  position:relative;
+  width:min(calc(var(--u) * 60),290px);min-width:216px;
+  height:min(calc(var(--u) * 14.5),62px);min-height:54px;
+  display:flex;align-items:center;justify-content:center;
+  border-radius:999px;
+  font:500 max(12px,min(calc(var(--u) * 3.5),15px))/1 var(--sans);
+  letter-spacing:.26em;text-indent:.26em;text-transform:uppercase;white-space:nowrap;
+  color:#fbf1de;
+  background:
+    linear-gradient(110deg,rgba(255,255,255,0) 38%,rgba(255,255,255,.3) 50%,rgba(255,255,255,0) 62%) 220% 0/260% 100% no-repeat,
+    linear-gradient(180deg,#7b4146 0%,#65303a 55%,#552730 100%);
+  border:1px solid #c9a96a;
+  box-shadow:
+    inset 0 0 0 3px rgba(101,48,58,.95),
+    inset 0 0 0 4px rgba(214,185,125,.55),
+    0 10px 24px rgba(70,35,30,.34),
+    0 0 14px rgba(201,169,106,.25);
+  animation:pop var(--button-pulse-duration) ease-in-out infinite,shine var(--button-pulse-duration) ease-in-out infinite,glow var(--button-pulse-duration) ease-in-out infinite;
+  transition:opacity .6s ease,filter .2s ease;
+  -webkit-appearance:none;appearance:none;
+}
+.open-btn::after{ /* soft expanding glow ring (pill shaped) */
+  content:"";position:absolute;inset:-1px;border-radius:inherit;pointer-events:none;
+  border:1px solid rgba(176,134,72,.85);
+  animation:ripple var(--button-pulse-duration) ease-out infinite;
+}
+.open-btn:active{filter:brightness(1.08)}
+@keyframes pop{0%,100%{transform:scale(1)}45%{transform:scale(1.055)}}
+@keyframes shine{0%,20%{background-position:220% 0,0 0}70%,100%{background-position:-120% 0,0 0}}
+@keyframes glow{
+  0%,100%{box-shadow:inset 0 0 0 3px rgba(101,48,58,.95),inset 0 0 0 4px rgba(214,185,125,.55),0 10px 24px rgba(70,35,30,.34),0 0 12px rgba(201,169,106,.22)}
+  45%{box-shadow:inset 0 0 0 3px rgba(101,48,58,.95),inset 0 0 0 4px rgba(214,185,125,.55),0 12px 28px rgba(70,35,30,.38),0 0 30px rgba(190,148,82,.75)}
+}
+@keyframes ripple{0%{transform:scale(1,1);opacity:.85}75%,100%{transform:scale(1.2,1.75);opacity:0}}
+
+.sound-note{
+  margin-top:calc(var(--h) * 2);text-align:center;color:#8d7658;
+  font:300 max(10px,calc(var(--u) * 2.8))/1.4 var(--sans);letter-spacing:.28em;margin-right:-.28em;text-transform:uppercase;
+}
+
+/* ==========================================================================
+   SCENE 1 — COUPLE
+   ========================================================================== */
+.couple{
+  --cw:min(calc(var(--sw) * .5), calc(var(--u) * 86));
+  position:absolute;left:50%;width:var(--cw);transform:translateX(-50%);
+  top:calc(32.5% + var(--safe-t) * .3);bottom:12.5%;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:calc(var(--h) * 1.5);text-align:center;
+}
+.person{display:flex;flex-direction:column;align-items:center}
+.name{
+  font:400 min(calc(var(--u) * 14),calc(var(--h) * 7.4))/1.12 var(--script);
+  color:var(--gold-deep);
+  padding:.04em .12em .1em;
+  text-shadow:0 1px 0 rgba(255,255,255,.7);
+  white-space:nowrap;
+}
+.rel{
+  font:400 max(10px,min(calc(var(--u) * 2.7),calc(var(--h) * 1.5)))/1.2 var(--sans);
+  letter-spacing:.34em;margin-right:-.34em;text-transform:uppercase;color:var(--gold);
+  margin-top:calc(var(--h) * .5);
+}
+.parents{
+  margin-top:calc(var(--h) * .7);
+  font:400 max(13px,min(calc(var(--u) * 3.95),calc(var(--h) * 2.2)))/1.5 var(--sans);
+  color:var(--ink);letter-spacing:.01em;
+}
+.parents span{display:block}
+.amp-row{display:flex;align-items:center;justify-content:center;gap:calc(var(--u) * 3);width:100%}
+.amp-row .rule{height:1px;width:calc(var(--u) * 13);background:linear-gradient(90deg,transparent,var(--gold))}
+.amp-row .rule:last-child{background:linear-gradient(270deg,transparent,var(--gold))}
+.amp-row .rule:first-child{transform-origin:right center}
+.amp-row .rule:last-child{transform-origin:left center}
+.amp{
+  font:italic 500 min(calc(var(--u) * 11),calc(var(--h) * 5.4))/1 var(--serif);
+  color:var(--gold);
+}
+
+/* ==========================================================================
+   SCENES 2–4 — EVENTS
+   ========================================================================== */
+.ev-scroll{ /* scrollable column: [first screen = heading + venue] then [client message]; artwork stays fixed behind */
+  --ev-top:.086;           /* distance of the heading from the top of the screen (fraction of screen height) */
+  position:absolute;inset:0;overflow-x:hidden;overflow-y:auto;
+  overscroll-behavior:contain;-webkit-overflow-scrolling:touch;
+  scrollbar-width:none;pointer-events:auto;
+  padding:calc(var(--app-h) * var(--ev-top) + var(--safe-t) * .5) 0 calc(var(--app-h) * .14 + var(--safe-b));
+}
+.ev-scroll::-webkit-scrollbar{display:none}
+.ev-col{width:calc(var(--u) * 100);margin:0 auto;display:flex;flex-direction:column;align-items:center}
+.ev-col > *{flex:none}
+.ev-first{ /* exactly one screen: heading at the top, venue card at the bottom (as before) */
+  width:100%;display:flex;flex-direction:column;justify-content:space-between;align-items:center;
+  min-height:calc(var(--app-h) * (1 - var(--ev-top) - .082) - var(--safe-t) * .5 - var(--safe-b) * .5);
+}
+.ev-top{
+  width:100%;display:flex;flex-direction:column;align-items:center;text-align:center;
+  padding:0 calc(var(--u) * 6);
+}
+.ev-message{ /* the client's invitation message, just below the first screen */
+  margin-top:calc(var(--h) * 9);
+  width:min(calc(var(--u) * 82),calc(var(--sw) * .84));
+  padding:calc(var(--u) * 6) calc(var(--u) * 5.5);
+  text-align:center;
+  background:rgba(14,9,6,.38);
+  -webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);
+  border:1px solid rgba(232,207,151,.26);
+  border-radius:calc(var(--u) * 5);
+}
+.ev-message p{
+  margin:0 0 1.05em;
+  font:500 max(17.5px,min(calc(var(--u) * 5),calc(var(--h) * 2.7)))/1.6 var(--serif);
+  color:#fff8ea;letter-spacing:.005em;
+  text-shadow:0 1px 10px rgba(0,0,0,.55);
+}
+.ev-message p:last-child{margin-bottom:0}
+.ev-message p.on-date{
+  font-style:italic;font-weight:600;color:#ecd49c;font-size:1.12em;letter-spacing:.02em;
+  margin:1.1em 0;
+}
+.eyebrow{
+  font:400 max(10px,min(calc(var(--u) * 2.7),calc(var(--h) * 1.5)))/1.2 var(--sans);
+  letter-spacing:.42em;margin-right:-.42em;text-transform:uppercase;color:var(--champagne);
+  text-shadow:0 1px 10px rgba(0,0,0,.5);
+}
+.ev-title{
+  margin-top:calc(var(--h) * 1.2);
+  font:600 min(calc(var(--u) * 13.5),calc(var(--h) * 7.2))/1.02 var(--serif);
+  letter-spacing:.012em;color:#fff9ec;text-wrap:balance;
+  text-shadow:0 2px 22px rgba(0,0,0,.6),0 1px 2px rgba(0,0,0,.35);
+}
+.ev-title .nb{white-space:nowrap}
+.ev-title .amp{font-style:italic;font-weight:500;color:#e8cf97;font-size:.92em}
+.orn{display:flex;align-items:center;justify-content:center;gap:calc(var(--u) * 2.6);margin:calc(var(--h) * 1.9) 0 calc(var(--h) * 1.7)}
+.orn i{display:block;height:1px;width:calc(var(--u) * 15);background:linear-gradient(90deg,transparent,#e0c488)}
+.orn i:last-child{background:linear-gradient(270deg,transparent,#e0c488)}
+.orn i:first-child{transform-origin:right center}
+.orn i:last-child{transform-origin:left center}
+.orn b{display:block;width:calc(var(--u) * 1.7);height:calc(var(--u) * 1.7);min-width:6px;min-height:6px;background:#e0c488;transform:rotate(45deg);box-shadow:0 0 12px rgba(224,196,136,.7)}
+.ev-day{
+  font:400 max(11px,min(calc(var(--u) * 3.3),calc(var(--h) * 1.85)))/1.2 var(--sans);
+  letter-spacing:.46em;margin-right:-.46em;text-transform:uppercase;color:#f1dfb4;
+  text-shadow:0 1px 12px rgba(0,0,0,.55);
+}
+.ev-date{
+  margin-top:calc(var(--h) * .8);
+  font:500 min(calc(var(--u) * 8),calc(var(--h) * 4.3))/1.1 var(--serif);
+  color:#fff9ec;letter-spacing:.02em;
+  text-shadow:0 2px 16px rgba(0,0,0,.6),0 1px 2px rgba(0,0,0,.35);
+}
+.ev-date .ord{font-size:.52em;vertical-align:.62em;line-height:0;margin-left:.04em}
+
+/* Event timings (schedule) — sits right under the date */
+.times{
+  list-style:none;margin:calc(var(--h) * 2.2) 0 0;padding:calc(var(--u) * 3.4) calc(var(--u) * 3);
+  width:min(calc(var(--u) * 86),calc(var(--sw) * .9));
+  display:flex;flex-direction:column;gap:calc(var(--h) * 1.15);
+  border-top:1px solid rgba(232,207,151,.38);border-bottom:1px solid rgba(232,207,151,.38);
+}
+.times li{display:flex;align-items:baseline;gap:calc(var(--u) * 2)}
+.t-label{
+  font:400 max(10.5px,min(calc(var(--u) * 2.9),calc(var(--h) * 1.6)))/1.25 var(--sans);
+  letter-spacing:.15em;text-transform:uppercase;color:#f3e2bd;text-align:left;
+  text-shadow:0 1px 10px rgba(0,0,0,.6);
+}
+.t-lead{flex:1;min-width:8px;border-bottom:1px dotted rgba(232,207,151,.6);transform:translateY(-.3em)}
+.t-time{
+  font:600 max(16px,min(calc(var(--u) * 4.7),calc(var(--h) * 2.6)))/1 var(--serif);
+  letter-spacing:.03em;white-space:nowrap;color:#fff9ec;
+  text-shadow:0 2px 12px rgba(0,0,0,.6),0 1px 2px rgba(0,0,0,.35);
+}
+
+.venue{
+  position:relative;margin:0 auto;
+  width:min(calc(var(--u) * 86),calc(var(--sw) * .9));
+  padding:calc(var(--u) * 5) calc(var(--u) * 5) calc(var(--u) * 4.6);
+  text-align:center;
+  background:linear-gradient(180deg,rgba(26,18,12,.46),rgba(18,12,8,.58));
+  -webkit-backdrop-filter:blur(9px) saturate(1.1);backdrop-filter:blur(9px) saturate(1.1);
+  border:1px solid rgba(232,207,151,.5);
+  border-radius:calc(var(--u) * 5) calc(var(--u) * 5) calc(var(--u) * 3) calc(var(--u) * 3);
+  box-shadow:0 14px 40px rgba(0,0,0,.35),inset 0 0 0 4px rgba(232,207,151,.07);
+}
+.venue::before{ /* small gold arch-point accent on the top edge */
+  content:"";position:absolute;top:-5px;left:50%;width:9px;height:9px;margin-left:-4.5px;
+  background:#e0c488;transform:rotate(45deg);box-shadow:0 0 10px rgba(224,196,136,.6);
+}
+.venue-label{
+  font:400 max(10px,min(calc(var(--u) * 2.7),calc(var(--h) * 1.5)))/1 var(--sans);
+  letter-spacing:.44em;margin-right:-.44em;text-transform:uppercase;color:#e8cf97;
+  margin-bottom:calc(var(--h) * 1.2);
+}
+.venue address{
+  font:400 max(13px,min(calc(var(--u) * 3.9),calc(var(--h) * 2.15)))/1.5 var(--sans);
+  color:#fdf6e6;letter-spacing:.01em;overflow-wrap:anywhere;
+  text-shadow:0 1px 8px rgba(0,0,0,.4);
+}
+.venue address span{display:block}
+.venue address .vn{
+  font:600 max(17px,min(calc(var(--u) * 5.4),calc(var(--h) * 2.9)))/1.2 var(--serif);
+  letter-spacing:.04em;color:#fff;margin-bottom:.25em;
+}
+.venue address .vn--code{letter-spacing:.14em}
+.map-link{
+  display:inline-flex;align-items:center;gap:.55em;margin-top:calc(var(--h) * 1.5);
+  padding:.7em 1.4em;min-height:40px;
+  font:500 max(10.5px,calc(var(--u) * 2.9))/1 var(--sans);letter-spacing:.26em;text-transform:uppercase;text-decoration:none;
+  color:#f3e2bd;border:1px solid rgba(232,207,151,.65);border-radius:999px;
+  transition:background .3s ease,color .3s ease;
+}
+.map-link svg{width:1.15em;height:1.15em;flex:none}
+.map-link:hover,.map-link:active{background:rgba(232,207,151,.2);color:#fff}
+
+/* ==========================================================================
+   SCENE 5 — THANK YOU
+   ========================================================================== */
+.closing{
+  --cw:min(calc(var(--sw) * .43),calc(var(--u) * 76));
+  position:absolute;left:50%;width:var(--cw);transform:translateX(-50%);
+  top:calc(20% + var(--safe-t) * .3);bottom:21%;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
+}
+.thanks{
+  font:400 min(calc(var(--u) * 17),calc(var(--h) * 9))/1.05 var(--script);
+  color:var(--wine);padding:.04em .1em .12em;white-space:nowrap;
+}
+.closing .orn{margin:calc(var(--h) * 1.5) 0 calc(var(--h) * 2)}
+.closing .orn i{background:linear-gradient(90deg,transparent,var(--gold))}
+.closing .orn i:last-child{background:linear-gradient(270deg,transparent,var(--gold))}
+.closing .orn b{background:var(--gold);box-shadow:none}
+.msg{
+  font:italic 500 max(15px,min(calc(var(--u) * 5.1),calc(var(--h) * 2.8)))/1.45 var(--serif);
+  color:var(--ink);text-wrap:balance;
+}
+.with{
+  margin-top:calc(var(--h) * 2.6);
+  font:400 max(10px,min(calc(var(--u) * 2.7),calc(var(--h) * 1.5)))/1.2 var(--sans);
+  letter-spacing:.34em;margin-right:-.34em;text-transform:uppercase;color:var(--gold-deep);
+}
+.sign{
+  margin-top:calc(var(--h) * .5);
+  font:400 min(calc(var(--u) * 10),calc(var(--h) * 5.2))/1.15 var(--script);
+  color:var(--gold-deep);white-space:nowrap;padding:.04em .1em .1em;
+}
+.fam{
+  font:400 max(10px,min(calc(var(--u) * 2.6),calc(var(--h) * 1.45)))/1.3 var(--sans);
+  letter-spacing:.26em;margin-right:-.26em;text-transform:uppercase;color:var(--gold);
+}
+
+/* ==========================================================================
+   FOG TRANSITION
+   ========================================================================== */
+.fog{position:fixed;inset:0;z-index:30;pointer-events:none;opacity:0;overflow:hidden;visibility:hidden}
+.fog::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.72),rgba(250,246,238,.88))}
+.fog i{position:absolute;inset:-25%;will-change:transform}
+.fog i:nth-child(1){background:
+  radial-gradient(46% 40% at 22% 68%,rgba(255,255,255,1),rgba(255,255,255,0) 72%),
+  radial-gradient(42% 36% at 80% 26%,rgba(255,255,255,.96),rgba(255,255,255,0) 72%)}
+.fog i:nth-child(2){background:
+  radial-gradient(52% 40% at 62% 82%,rgba(255,255,255,1),rgba(255,255,255,0) 70%),
+  radial-gradient(40% 34% at 30% 18%,rgba(255,252,246,.95),rgba(255,255,255,0) 70%)}
+.fog i:nth-child(3){background:radial-gradient(70% 55% at 50% 50%,rgba(255,255,255,.95),rgba(255,255,255,0) 75%)}
+.fog.run{visibility:visible;animation:fogPass var(--fog-duration) ease-in-out forwards}
+.fog.run i:nth-child(1){animation:fogA var(--fog-duration) linear forwards}
+.fog.run i:nth-child(2){animation:fogB var(--fog-duration) linear forwards}
+.fog.run i:nth-child(3){animation:fogC var(--fog-duration) ease-in-out forwards}
+@keyframes fogPass{0%{opacity:0}38%{opacity:1}55%{opacity:1}100%{opacity:0}}
+@keyframes fogA{from{transform:translate3d(-9%,4%,0) scale(1)}to{transform:translate3d(9%,-4%,0) scale(1.16)}}
+@keyframes fogB{from{transform:translate3d(8%,-3%,0) scale(1.12)}to{transform:translate3d(-8%,4%,0) scale(1)}}
+@keyframes fogC{from{transform:scale(.9)}to{transform:scale(1.18)}}
+
+/* ==========================================================================
+   UI: AUDIO CONTROL · DOTS · HINT
+   ========================================================================== */
+body{--ui:#f3e2bd;--ui-soft:rgba(243,226,189,.45);--ui-pill:rgba(24,16,12,.38)}
+body[data-theme="light"]{--ui:#86642f;--ui-soft:rgba(134,100,47,.4);--ui-pill:rgba(255,252,244,.8)}
+
+.ui{
+  position:fixed;top:0;left:50%;transform:translateX(-50%);
+  width:min(100vw,calc(var(--app-h) * .8));height:var(--app-h);
+  z-index:40;pointer-events:none;
+}
+.audio{
+  position:absolute;top:calc(max(env(safe-area-inset-top,0px),0px) + 12px);right:12px;
+  display:flex;gap:2px;padding:3px;border-radius:999px;
+  background:var(--ui-pill);border:1px solid var(--ui-soft);
+  -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
+  box-shadow:0 4px 14px rgba(0,0,0,.14);
+  opacity:0;visibility:hidden;transform:translateY(-6px);
+  transition:opacity .8s ease,transform .8s ease,background .6s ease,border-color .6s ease,visibility 0s .8s;
+}
+body.audio-failed .audio{display:none!important}   /* if the song file can't load, the controls are hidden; the site keeps working */
+body.is-open .audio{opacity:1;visibility:visible;transform:none;pointer-events:auto;transition-delay:.9s,.9s,0s,0s,0s}
+.audio button{
+  position:relative;width:38px;height:38px;border-radius:50%;
+  display:grid;place-items:center;color:var(--ui);transition:color .6s ease,background .2s ease;
+}
+.audio button::before{content:"";position:absolute;inset:-4px} /* larger touch target */
+.audio button:hover{background:rgba(184,151,90,.16)}
+.audio svg{width:18px;height:18px;display:block}
+.audio .i-play,.audio .i-off{display:none}
+.audio [data-paused="true"] .i-pause{display:none}
+.audio [data-paused="true"] .i-play{display:block}
+.audio [data-muted="true"] .i-on{display:none}
+.audio [data-muted="true"] .i-off{display:block}
+
+.dots{
+  position:absolute;right:max(env(safe-area-inset-right,0px),0px);top:50%;transform:translateY(-50%);
+  display:flex;flex-direction:column;gap:2px;padding:6px 3px;
+  opacity:0;visibility:hidden;transition:opacity .8s ease,visibility 0s .8s;
+}
+body.is-open .dots{opacity:1;visibility:visible;pointer-events:auto;transition-delay:1.1s,0s}
+.dots button{position:relative;width:26px;height:22px;display:grid;place-items:center}
+.dots button::before{
+  content:"";display:block;width:6px;height:6px;border-radius:50%;
+  border:1px solid var(--ui);background:transparent;
+  transition:height .5s var(--ease),background .5s ease,border-color .6s ease,border-radius .5s ease;
+}
+.dots button[aria-current="true"]::before{height:20px;border-radius:6px;background:var(--ui)}
+
+.hint{
+  position:absolute;left:50%;bottom:calc(env(safe-area-inset-bottom,0px) + 1.4%);margin-left:-18px;
+  width:36px;height:36px;display:grid;place-items:center;color:var(--ui);
+  opacity:0;visibility:hidden;transition:opacity .8s ease,visibility 0s .8s,color .6s ease;
+  animation:nudge 2.2s ease-in-out infinite;
+}
+.hint svg{width:22px;height:22px;filter:drop-shadow(0 1px 4px rgba(0,0,0,.25))}
+body.is-open:not(.has-moved):not(.is-last) .hint{opacity:.9;visibility:visible;transition-delay:2.2s,0s,0s}
+body.is-open.has-more .hint{opacity:.9;visibility:visible;transition-delay:.4s,0s,0s}
+@keyframes nudge{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+
+noscript{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:2rem;text-align:center;background:var(--wine);color:#f1e9e0;font-family:var(--serif);font-size:1.4rem}
+
+/* ==========================================================================
+   LARGE SCREENS — keep it intimate and elegant
+   ========================================================================== */
+@media (min-width:900px) and (min-aspect-ratio:1/1){
+  .audio{right:18px;top:calc(env(safe-area-inset-top,0px) + 16px)}
+}
+
+/* ==========================================================================
+   REDUCED MOTION
+   ========================================================================== */
+@media (prefers-reduced-motion:reduce){
+  .open-btn,.open-btn::after,.hint,.mist,.scene .stage img{animation:none!important}
+  .rv,.rv--zoom{transform:none}
+  .scene.active .rv{transition:opacity .5s ease calc(.15s + var(--i,0) * .06s);transform:none}
+  .rule{transform:none}
+  .scene.active .rule{transition:opacity .5s ease}
+  .scene.active{transition-duration:.4s}
+  .invite0{transition:opacity .4s ease}
+  body.is-opening .invite0{transform:none}
+  .fx{animation:none!important}
+  .fog{display:none}
+}
+</style>
+</head>
+
+<body data-theme="dark">
+<noscript>Please enable JavaScript to view this wedding invitation.</noscript>
+
+<main class="app" id="app">
+
+  <!-- ===================== SCENE 0 · OPENING ===================== -->
+  <section class="scene scene--cover active" id="scene-0" data-theme="dark" aria-label="Wedding invitation">
+    <div class="invite0">
+      <h1 class="sr-only">Hira Rasul and Hamza Azhar — Wedding Invitation</h1>
+
+      <div class="card0 fx fx--fade" style="--i:-1">
+        <img src="assets/images/scene-0-opening.webp?v=4" width="1651" height="1651" alt="" fetchpriority="high" decoding="async" draggable="false">
+        <div class="card0-text">
+          <p class="c0-small fx" style="--i:1">Wedding Ceremony Of</p>
+          <p class="c0-names" aria-label="Hira with Hamza">
+            <span class="n fx" style="--i:2">Hira</span>
+            <span class="w fx" style="--i:3">with</span>
+            <span class="n fx" style="--i:4">Hamza</span>
+          </p>
+        </div>
+      </div>
+
+      <!-- Quranic Ayat: Surah Ar-Rum 30:21 -->
+      <div class="ayat">
+        <p class="ayat-text fx" style="--i:5" lang="ar" dir="rtl">﴿وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً ۚ إِنَّ فِي ذَٰلِكَ لَآيَاتٍ لِّقَوْمٍ يَتَفَكَّرُونَ﴾</p>
+        <p class="ayat-ref fx" style="--i:5">Surah Ar-Rum · 30:21</p>
+      </div>
+
+      <div class="btnwrap fx" style="--i:6">
+        <button class="open-btn" id="openBtn" type="button" aria-label="Open Invitation">
+          Open Invitation
+        </button>
+      </div>
+      <p class="sound-note fx" style="--i:6">Best with sound on</p>
+    </div>
+  </section>
+
+  <!-- ===================== SCENE 1 · BRIDE & GROOM ===================== -->
+  <section class="scene scene--cream" id="scene-1" data-theme="light" aria-label="Bride and groom" tabindex="-1" aria-hidden="true">
+    <div class="bg-fill" aria-hidden="true"></div>
+    <div class="stage"><img data-src="assets/images/scene-1-couple.webp" width="1080" height="1350" alt="" decoding="async" draggable="false"></div>
+    <div class="content"><div class="frame">
+      <div class="couple">
+        <div class="person">
+          <h2 class="name rv" style="--i:0">Hira Rasul</h2>
+          <p class="rel rv rv--fade" style="--i:1">Daughter of</p>
+          <p class="parents rv" style="--i:2"><span>Malik Muhammad Sarfraz Badar</span><span>&amp; Mrs Shahbana Tabasam</span></p>
+        </div>
+
+        <div class="amp-row" aria-hidden="true">
+          <span class="rule" style="--i:3"></span>
+          <span class="amp rv rv--zoom" style="--i:3">&amp;</span>
+          <span class="rule" style="--i:3"></span>
+        </div>
+
+        <div class="person">
+          <h2 class="name rv" style="--i:4">Hamza Azhar</h2>
+          <p class="rel rv rv--fade" style="--i:5">Son of</p>
+          <p class="parents rv" style="--i:6"><span>Muhammad Azhar</span><span>&amp; Komal Azhar</span></p>
+        </div>
+      </div>
+    </div></div>
+  </section>
+
+  <!-- ===================== SCENE 2 · MEHNDI & QAWALI ===================== -->
+  <section class="scene scene--event scene--tall" id="scene-2" hidden data-skipped="barat-only" data-theme="dark" aria-label="Mehndi and Qawali" tabindex="-1" aria-hidden="true">
+    <div class="bg-fill" aria-hidden="true"></div>
+    <div class="stage"><img data-src="assets/images/scene-2-mehndi.webp?v=3" width="1024" height="1536" alt="" decoding="async" draggable="false"></div>
+    <div class="overlay" aria-hidden="true"></div>
+    <div class="scrim-top" aria-hidden="true"></div>
+    <div class="mist mist--top" aria-hidden="true"></div><div class="mist mist--bottom" aria-hidden="true"></div>
+    <div class="content">
+      <div class="ev-scroll">
+        <div class="ev-col">
+
+          <!-- FIRST SCREEN: heading, date and venue -->
+          <div class="ev-first">
+            <div class="ev-top">
+              <p class="eyebrow rv rv--fade" style="--i:0">Hira &amp; Hamza</p>
+              <h2 class="ev-title rv" style="--i:1">Mehndi <span class="nb"><span class="amp">&amp;</span> Qawali</span></h2>
+              <div class="orn rv rv--fade" style="--i:2" aria-hidden="true"><i></i><b></b><i></i></div>
+              <p class="ev-day rv" style="--i:3">Wednesday</p>
+              <p class="ev-date rv" style="--i:4">23<span class="ord">rd</span> December 2026</p>
+              <ul class="times rv" style="--i:5" aria-label="Schedule">
+                <li><span class="t-label">Rasm-e-Mehndi</span><span class="t-lead" aria-hidden="true"></span><span class="t-time">6:00 PM</span></li>
+                <li><span class="t-label">Dinner Served</span><span class="t-lead" aria-hidden="true"></span><span class="t-time">8:00 PM</span></li>
+                <li><span class="t-label">Qawali Event Starting</span><span class="t-lead" aria-hidden="true"></span><span class="t-time">9:30 PM</span></li>
+              </ul>
+            </div>
+            <div class="venue rv" style="--i:6">
+              <p class="venue-label">Venue</p>
+              <address>
+                <span class="vn vn--code">MXVP+8CR</span>
+                <span>Main Margalla Road, NPF E-11/4, E-11,</span>
+                <span>Islamabad, 45000, Pakistan</span>
+              </address>
+              <a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=MXVP%2B8CR%20Islamabad%20Pakistan" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.2a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.8" r="2.4"/></svg>
+                View on Map
+              </a>
+            </div>
+          </div>
+
+          <!-- CLIENT MESSAGE (exact wording) — scroll down to read -->
+          <div class="ev-message rv rv--fade" style="--i:7">
+            <p class="rv" style="--i:8">With hearts filled with happiness and souls wrapped in the magic of love, we cordially invite you to grace us with your presence at the Mehndi Ceremony of our beloved bride and groom.</p>
+            <p class="rv on-date" style="--i:9">On Wednesday 23rd December</p>
+            <p class="rv" style="--i:10">An evening adorned with the elegance of tradition, the beauty of henna, enchanting melodies, vibrant colours and unforgettable celebrations awaits!</p>
+            <p class="rv" style="--i:11">Your gracious presence and blessings will add a special sparkle to this joyous occasion.</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SCENE 3 · BARAAT ===================== -->
+  <section class="scene scene--event scene--tall" id="scene-3" data-theme="dark" aria-label="Baraat" tabindex="-1" aria-hidden="true">
+    <div class="bg-fill" aria-hidden="true"></div>
+    <div class="stage"><img data-src="assets/images/scene-3-baraat.webp?v=3" width="1024" height="1536" alt="" decoding="async" draggable="false"></div>
+    <div class="overlay" aria-hidden="true"></div>
+    <div class="scrim-top" aria-hidden="true"></div>
+    <div class="mist mist--top" aria-hidden="true"></div><div class="mist mist--bottom" aria-hidden="true"></div>
+    <div class="content">
+      <div class="ev-scroll">
+        <div class="ev-col">
+
+          <!-- FIRST SCREEN: heading, date and venue -->
+          <div class="ev-first">
+            <div class="ev-top">
+              <p class="eyebrow rv rv--fade" style="--i:0">Hira &amp; Hamza</p>
+              <h2 class="ev-title rv" style="--i:1">Baraat</h2>
+              <div class="orn rv rv--fade" style="--i:2" aria-hidden="true"><i></i><b></b><i></i></div>
+              <p class="ev-day rv" style="--i:3">Friday</p>
+              <p class="ev-date rv" style="--i:4">25<span class="ord">th</span> December 2026</p>
+              <ul class="times rv" style="--i:5" aria-label="Schedule">
+                <li><span class="t-label">Arrival Time</span><span class="t-lead" aria-hidden="true"></span><span class="t-time">6:00 PM</span></li>
+                <li><span class="t-label">Dinner Served</span><span class="t-lead" aria-hidden="true"></span><span class="t-time">8:00 PM</span></li>
+                <li><span class="t-label">Rukhsati</span><span class="t-lead" aria-hidden="true"></span><span class="t-time">10:00 PM</span></li>
+              </ul>
+            </div>
+            <div class="venue rv" style="--i:6">
+              <p class="venue-label">Venue</p>
+              <address>
+                <span class="vn">The La Quinta Glass Marquee</span>
+                <span>Main Boulevard, Phase 7, Bahria Town,</span>
+                <span>Rawalpindi, 46620, Pakistan</span>
+              </address>
+              <a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=The%20La%20Quinta%20Glass%20Marquee%20Bahria%20Town%20Phase%207%20Rawalpindi" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.2a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.8" r="2.4"/></svg>
+                View on Map
+              </a>
+            </div>
+          </div>
+
+          <!-- CLIENT MESSAGE (exact wording) — scroll down to read -->
+          <div class="ev-message rv rv--fade" style="--i:7">
+            <p class="rv" style="--i:8">With immense joy and heartfelt blessings, we cordially invite you to join us in celebrating the grand Baraat Ceremony of our beloved Hira &amp; Hamza</p>
+            <p class="rv on-date" style="--i:9">On Friday 25th December</p>
+            <p class="rv" style="--i:10">An enchanting celebration of grandeur, timeless traditions and eternal love awaits, as two hearts unite and a beautiful new chapter begins.</p>
+            <p class="rv" style="--i:11">Your esteemed presence and blessings will add grace and splendour to this momentous occasion.</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SCENE 4 · WALIMA ===================== -->
+  <section class="scene scene--event" id="scene-4" hidden data-skipped="barat-only" data-theme="dark" aria-label="Walima" tabindex="-1" aria-hidden="true">
+    <div class="bg-fill" aria-hidden="true"></div>
+    <div class="stage"><img data-src="assets/images/scene-4-walima.webp" width="1080" height="1935" alt="" decoding="async" draggable="false"></div>
+    <div class="overlay" aria-hidden="true"></div>
+    <div class="scrim-top" aria-hidden="true"></div>
+    <div class="mist mist--top" aria-hidden="true"></div><div class="mist mist--bottom" aria-hidden="true"></div>
+    <div class="content">
+      <div class="ev-scroll">
+        <div class="ev-col">
+
+          <!-- FIRST SCREEN: heading, date and venue -->
+          <div class="ev-first">
+            <div class="ev-top">
+              <p class="eyebrow rv rv--fade" style="--i:0">Hira &amp; Hamza</p>
+              <h2 class="ev-title rv" style="--i:1">Walima</h2>
+              <div class="orn rv rv--fade" style="--i:2" aria-hidden="true"><i></i><b></b><i></i></div>
+              <p class="ev-day rv" style="--i:3">Saturday</p>
+              <p class="ev-date rv" style="--i:4">26<span class="ord">th</span> December 2026</p>
+              <ul class="times rv" style="--i:5" aria-label="Schedule">
+                <li><span class="t-label">Arrival Time</span><span class="t-lead" aria-hidden="true"></span><span class="t-time">7:00 PM</span></li>
+              </ul>
+            </div>
+            <div class="venue rv" style="--i:6">
+              <p class="venue-label">Venue</p>
+              <address>
+                <span class="vn">Aura Grande Arena</span>
+              </address>
+              <a class="map-link" href="https://share.google/Ifg3RmkhfBxaBlJZP" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.2a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.8" r="2.4"/></svg>
+                View on Map
+              </a>
+            </div>
+          </div>
+
+          <!-- CLIENT MESSAGE (exact wording) — scroll down to read -->
+          <div class="ev-message rv rv--fade" style="--i:7">
+            <p class="rv" style="--i:8">With immense pride, boundless joy and heartfelt gratitude, we request the pleasure of your esteemed presence at the Grand Walima Reception celebrating the beautiful union of our beloved Hira &amp; Hamza</p>
+            <p class="rv on-date" style="--i:9">On Saturday 26th December</p>
+            <p class="rv" style="--i:10">As two souls unite and embark upon a lifetime of togetherness, we invite you to be part of an enchanting evening filled with grandeur, elegance, cherished traditions and unforgettable moments.</p>
+            <p class="rv" style="--i:11">Your gracious presence and blessings would be the greatest honour, adding splendour and joy to this momentous celebration.</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SCENE 5 · THANK YOU ===================== -->
+  <section class="scene scene--thanks" id="scene-5" data-theme="light" aria-label="Thank you" tabindex="-1" aria-hidden="true">
+    <div class="bg-fill" aria-hidden="true"></div>
+    <div class="stage"><img data-src="assets/images/scene-5-thankyou.webp" width="1080" height="1350" alt="" decoding="async" draggable="false"></div>
+    <div class="content"><div class="frame">
+      <div class="closing">
+        <h2 class="thanks rv" style="--i:0">Thank You</h2>
+        <div class="orn rv rv--fade" style="--i:1" aria-hidden="true"><i></i><b></b><i></i></div>
+        <p class="msg rv" style="--i:2">With grateful hearts, we thank you for your love, prayers and blessings. It would be our joy to celebrate these special moments with you.</p>
+        <p class="with rv rv--fade" style="--i:4">With love</p>
+        <p class="sign rv" style="--i:5">Hira &amp; Hamza</p>
+        <p class="fam rv rv--fade" style="--i:6">&amp; our families</p>
+      </div>
+    </div></div>
+  </section>
+
+  <!-- ===================== FOG TRANSITION LAYER ===================== -->
+  <div class="fog" id="fog" aria-hidden="true"><i></i><i></i><i></i></div>
+
+  <!-- ===================== CONTROLS ===================== -->
+  <div class="ui">
+    <div class="audio" role="group" aria-label="Music controls">
+      <button type="button" id="btnPlay" data-paused="false" aria-label="Pause music" title="Pause / Play">
+        <svg class="i-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6.5" y="5" width="3.8" height="14" rx="1.2"/><rect x="13.7" y="5" width="3.8" height="14" rx="1.2"/></svg>
+        <svg class="i-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.4v13.2a.9.9 0 0 0 1.4.8l10-6.6a.9.9 0 0 0 0-1.5l-10-6.6A.9.9 0 0 0 8 5.4z"/></svg>
+      </button>
+      <button type="button" id="btnMute" data-muted="false" aria-label="Mute music" title="Mute / Unmute">
+        <svg class="i-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9.5v5h3.6L12.5 19V5L7.6 9.5H4z" fill="currentColor" stroke="none"/><path d="M15.6 9a4.2 4.2 0 0 1 0 6M18.2 6.6a7.6 7.6 0 0 1 0 10.8"/></svg>
+        <svg class="i-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9.5v5h3.6L12.5 19V5L7.6 9.5H4z" fill="currentColor" stroke="none"/><path d="M16 9.5l5 5M21 9.5l-5 5"/></svg>
+      </button>
+    </div>
+
+    <nav class="dots" id="dots" aria-label="Invitation sections">
+      <button type="button" data-go="1" aria-label="Bride and groom"></button>
+      <button type="button" data-go="2" aria-label="Baraat"></button>
+      <button type="button" data-go="3" aria-label="Thank you"></button>
+    </nav>
+
+    <div class="hint" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 15l6-6 6 6"/><path d="M6 20l6-6 6 6" opacity=".45"/></svg>
+    </div>
+  </div>
+
+  <div class="sr-only" id="live" aria-live="polite"></div>
+</main>
+
+<!-- Wedding song "Jashn-e-Bahaaraa" — ONE persistent player. Starts only after "Open Invitation" is tapped and
+     keeps playing across all pages. The file already begins at the original song's 00:22 (intro removed), so
+     the phone never has to "jump" inside the file — that is what keeps it reliable on mobile. -->
+<audio id="song" src="assets/audio/jashn-e-bahaaraa.mp3" preload="auto" loop playsinline></audio>
+
+<script>
+(() => {
+  'use strict';
+
+  /* ------------------------------------------------------------------ *
+   *  Elements & state
+   * ------------------------------------------------------------------ */
+  const root    = document.documentElement;
+  const body    = document.body;
+  const app     = document.getElementById('app');
+  /* ── PAGE SEQUENCE (Barat-only version) ──────────────────────────────
+     Pages are shown in exactly this order:
+       scene-0 Opening · scene-1 Couple Introduction · scene-3 Baraat · scene-5 Thank You
+     The Mehndi (scene-2) and Walima (scene-4) pages are still in the file but are skipped.
+     Full version order would be: scene-0, scene-1, scene-2, scene-3, scene-4, scene-5 */
+  const PAGE_SEQUENCE = ['scene-0', 'scene-1', 'scene-3', 'scene-5'];
+  const scenes  = PAGE_SEQUENCE.map(id => document.getElementById(id));
+  const fog     = document.getElementById('fog');
+  const live    = document.getElementById('live');
+  const openBtn = document.getElementById('openBtn');
+  const dotBtns = Array.from(document.querySelectorAll('#dots button'));
+  const audio   = document.getElementById('song');
+  const btnPlay = document.getElementById('btnPlay');
+  const btnMute = document.getElementById('btnMute');
+
+  const LAST = scenes.length - 1;
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  let current = 0;
+  let opened = false;
+  let locked = false;
+  let cooldownUntil = 0;
+  let userPaused = false;
+  const leaveTimers = new Map();
+
+  const wait = ms => new Promise(r => setTimeout(r, ms));
+
+  // Event pages scroll their own content; page navigation only happens at the top/bottom edge
+  const innerScroller = el => (el && el.closest) ? el.closest('.ev-scroll') : null;
+  const canScroll = (sc, dir) => dir > 0
+    ? sc.scrollTop + sc.clientHeight < sc.scrollHeight - 2
+    : sc.scrollTop > 2;
+  let lastInnerScroll = 0;
+
+  // Show the little "more below" chevron while the current event page still has text to read
+  function updateMore() {
+    const sc = scenes[current].querySelector('.ev-scroll');
+    const more = !!sc && sc.scrollTop + sc.clientHeight < sc.scrollHeight - 12;
+    body.classList.toggle('has-more', more);
+  }
+  document.querySelectorAll('.ev-scroll').forEach(sc => sc.addEventListener('scroll', updateMore, { passive: true }));
+  window.addEventListener('resize', updateMore);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(updateMore);
+  // Timings come from the CUSTOMIZATION SETTINGS block in the CSS (single source of truth)
+  function cssMs(name, fallback) {
+    const v = getComputedStyle(root).getPropertyValue(name).trim();
+    if (!v) return fallback;
+    const n = parseFloat(v);
+    if (isNaN(n)) return fallback;
+    return /ms$/.test(v) ? n : /s$/.test(v) ? n * 1000 : n;
+  }
+  const timing = () => {
+    if (reduced.matches) return { fog: 0, swap: 0, settle: 650, fade: 400 };
+    const fog = cssMs('--fog-duration', 3400);
+    const fade = cssMs('--scene-fade-duration', 2400);
+    const swap = Math.round(fog * 0.46);          // swap images while the mist is thickest
+    return { fog, swap, fade, settle: swap + Math.round(fade * 0.6) };
+  };
+
+  /* ------------------------------------------------------------------ *
+   *  Real viewport height (mobile browser toolbars)
+   * ------------------------------------------------------------------ */
+  function setAppHeight() {
+    root.style.setProperty('--app-h', window.innerHeight + 'px');
+  }
+  setAppHeight();
+  window.addEventListener('resize', setAppHeight);
+  window.addEventListener('orientationchange', () => setTimeout(setAppHeight, 250));
+
+  /* ------------------------------------------------------------------ *
+   *  Image loading — first scene instantly, the rest queued in order
+   * ------------------------------------------------------------------ */
+  const loading = new Map();
+  function loadScene(i) {
+    if (loading.has(i)) return loading.get(i);
+    const scene = scenes[i];
+    const img = scene.querySelector('.stage img, .card0 img');
+    const p = new Promise(resolve => {
+      const done = () => {
+        scene.style.setProperty('--img', 'url("' + img.currentSrc + '")');
+        resolve();
+      };
+      if (img.dataset.src && !img.getAttribute('src')) img.src = img.dataset.src;
+      if (img.complete && img.naturalWidth) return done();
+      img.addEventListener('load', done, { once: true });
+      img.addEventListener('error', resolve, { once: true });
+    });
+    loading.set(i, p);
+    return p;
+  }
+  async function preloadRest() {
+    for (let i = 1; i <= LAST; i++) { await loadScene(i); }
+  }
+  loadScene(0).then(() => {
+    const idle = window.requestIdleCallback || (fn => setTimeout(fn, 200));
+    idle(preloadRest);
+  });
+
+  /* ------------------------------------------------------------------ *
+   *  Audio — "Jashn-e-Bahaaraa"
+   *  One persistent <audio> element. It starts only when the guest taps
+   *  "Open Invitation" and is never touched by page navigation, so it never
+   *  restarts between pages. The file itself begins at the song's 00:22, so no
+   *  seeking is needed (seeking inside a big file is unreliable on phones).
+   * ------------------------------------------------------------------ */
+  audio.loop = true;                // at the end the song simply repeats from its start (= original 00:22)
+
+  function syncAudioUI() {
+    btnPlay.dataset.paused = String(audio.paused);
+    btnPlay.setAttribute('aria-label', audio.paused ? 'Play music' : 'Pause music');
+    btnMute.dataset.muted = String(audio.muted);
+    btnMute.setAttribute('aria-label', audio.muted ? 'Unmute music' : 'Mute music');
+  }
+  ['play', 'pause', 'volumechange'].forEach(ev => audio.addEventListener(ev, syncAudioUI));
+
+  // Safety net for browsers that ignore the native loop attribute
+  audio.addEventListener('ended', () => {
+    audio.currentTime = 0;
+    const p = audio.play();
+    if (p && p.catch) p.catch(() => {});
+  });
+
+  // If the file cannot be loaded, hide the music controls and carry on silently
+  audio.addEventListener('error', () => { body.classList.add('audio-failed'); });
+
+  function tryPlay() {
+    const p = audio.play();
+    if (p && p.catch) p.catch(() => { syncAudioUI(); });
+    return p;
+  }
+
+  function startAudio() {           // must be called inside the click handler
+    audio.loop = true;
+    audio.muted = false;
+    tryPlay();
+    syncAudioUI();
+
+    // Slow mobile network: if nothing is playing after a few seconds, kick the player once.
+    setTimeout(() => {
+      if (!userPaused && (audio.paused || audio.currentTime < 0.2) && audio.error === null) {
+        audio.load();
+        tryPlay();
+      }
+    }, 6000);
+  }
+
+  btnPlay.addEventListener('click', () => {
+    if (audio.paused) {
+      userPaused = false;
+      tryPlay();
+    } else {
+      userPaused = true;
+      audio.pause();
+    }
+  });
+  btnMute.addEventListener('click', () => { audio.muted = !audio.muted; });
+
+  // Resume after the phone / browser interrupts playback (e.g. app switch in WhatsApp)
+  document.addEventListener('visibilitychange', () => {
+    if (!document.hidden && opened && !userPaused && audio.paused) tryPlay();
+  });
+  syncAudioUI();
+
+  /* ------------------------------------------------------------------ *
+   *  Scene switching
+   * ------------------------------------------------------------------ */
+  function startFog(ms) {
+    if (!ms) return;
+    fog.classList.remove('run');
+    void fog.offsetWidth;                 // restart the animation
+    fog.classList.add('run');
+    setTimeout(() => fog.classList.remove('run'), ms + 60);
+  }
+
+  function swapTo(target) {
+    const prev = scenes[current];
+    const next = scenes[target];
+
+    prev.classList.remove('active');
+    prev.classList.add('leaving');
+    prev.setAttribute('aria-hidden', 'true');
+    clearTimeout(leaveTimers.get(prev));
+    leaveTimers.set(prev, setTimeout(() => prev.classList.remove('leaving'), timing().fade + 300));
+
+    const sc = next.querySelector('.ev-scroll');
+    if (sc) sc.scrollTop = 0;
+    clearTimeout(leaveTimers.get(next));
+    next.classList.remove('leaving');
+    next.classList.add('active');
+    next.setAttribute('aria-hidden', 'false');
+
+    current = target;
+    body.dataset.theme = next.dataset.theme;
+    body.classList.toggle('is-last', current === LAST);
+    dotBtns.forEach(b => b.setAttribute('aria-current', String(Number(b.dataset.go) === current)));
+    live.textContent = next.getAttribute('aria-label') || '';
+    updateMore();
+    try { next.focus({ preventScroll: true }); } catch (e) {}
+  }
+
+  async function transition(target) {
+    locked = true;
+    const t = timing();
+    startFog(t.fog);
+    await Promise.all([wait(t.swap), Promise.race([loadScene(target), wait(4000)])]);
+    swapTo(target);
+    await wait(Math.max(0, t.settle - t.swap));
+    locked = false;
+    cooldownUntil = performance.now() + 350;
+  }
+
+  function goTo(target) {
+    if (!opened || locked) return;
+    target = Math.max(1, Math.min(LAST, target));
+    if (target === current) return;
+    body.classList.add('has-moved');
+    transition(target);
+  }
+  const next = () => goTo(current + 1);
+  const prev = () => goTo(current - 1);
+
+  /* ------------------------------------------------------------------ *
+   *  Open Invitation
+   * ------------------------------------------------------------------ */
+  openBtn.addEventListener('click', () => {
+    if (opened) return;
+    opened = true;
+    startAudio();                         // inside the user gesture → allowed everywhere
+    body.classList.add('is-opening');
+    openBtn.disabled = true;
+    transition(1).then(() => {});
+    setTimeout(() => body.classList.add('is-open'), reduced.matches ? 200 : timing().swap);
+  });
+
+  /* ------------------------------------------------------------------ *
+   *  Navigation: wheel · swipe · keyboard · dots
+   * ------------------------------------------------------------------ */
+  app.addEventListener('wheel', e => {
+    const sc = opened ? innerScroller(e.target) : null;
+    if (sc && canScroll(sc, Math.sign(e.deltaY))) {   // let the page content scroll natively
+      lastInnerScroll = performance.now();
+      body.classList.add('has-moved');
+      return;
+    }
+    e.preventDefault();
+    if (!opened || locked || performance.now() < cooldownUntil || performance.now() - lastInnerScroll < 800 || Math.abs(e.deltaY) < 14) return;
+    e.deltaY > 0 ? next() : prev();
+  }, { passive: false });
+
+  let tx = 0, ty = 0, tt = 0, tracking = false;
+  let tScroller = null, tAtTop = true, tAtBottom = true;
+  app.addEventListener('touchstart', e => {
+    if (e.touches.length !== 1) { tracking = false; return; }
+    tracking = true;
+    tx = e.touches[0].clientX; ty = e.touches[0].clientY; tt = Date.now();
+    tScroller = innerScroller(e.target);
+    if (tScroller) {
+      tAtTop = tScroller.scrollTop <= 2;
+      tAtBottom = tScroller.scrollTop + tScroller.clientHeight >= tScroller.scrollHeight - 2;
+    }
+  }, { passive: true });
+  app.addEventListener('touchend', e => {
+    if (!tracking) return;
+    tracking = false;
+    const t = e.changedTouches[0];
+    const dx = t.clientX - tx, dy = t.clientY - ty;
+    const fast = Date.now() - tt < 700;
+    if (Math.abs(dy) > (fast ? 38 : 70) && Math.abs(dy) > Math.abs(dx) * 1.1) {
+      if (dy < 0) { if (tScroller && !tAtBottom) { body.classList.add('has-moved'); return; } next(); }
+      else        { if (tScroller && !tAtTop) return; prev(); }
+    }
+  }, { passive: true });
+
+  window.addEventListener('keydown', e => {
+    if (!opened) return;
+    const tag = (e.target && e.target.tagName) || '';
+    const onControl = tag === 'BUTTON' || tag === 'A';
+    const sc = scenes[current].querySelector('.ev-scroll');
+    const step = dir => {                       // scroll the page content first, then change page
+      if (sc && canScroll(sc, dir)) { sc.scrollBy({ top: dir * sc.clientHeight * .6, behavior: 'smooth' }); body.classList.add('has-moved'); }
+      else dir > 0 ? next() : prev();
+    };
+    switch (e.key) {
+      case 'ArrowDown': case 'PageDown': e.preventDefault(); step(1); break;
+      case 'ArrowUp': case 'PageUp': e.preventDefault(); step(-1); break;
+      case 'ArrowRight': e.preventDefault(); next(); break;
+      case 'ArrowLeft': e.preventDefault(); prev(); break;
+      case ' ': if (!onControl) { e.preventDefault(); step(1); } break;
+      case 'Home': e.preventDefault(); goTo(1); break;
+      case 'End': e.preventDefault(); goTo(LAST); break;
+    }
+  });
+
+  dotBtns.forEach(b => b.addEventListener('click', () => goTo(Number(b.dataset.go))));
+
+  // Initial state
+  scenes[0].setAttribute('aria-hidden', 'false');
+})();
+</script>
+</body>
+</html>
